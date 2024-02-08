@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Add a new bike to the system";
+}
+
+<div>
+    <form action="Create" method="post">
+        <div class="mb-3">
+            <label for="bikeBrandInput" class="form-label">Brand</label>
+            <input class="form-control" id="bikeBrandInput" name="brand">
+        </div>
+        
+        <div class="mb-3">
+            <select class="form-select" aria-label="Bike type" name="type">
+                <option value="Mountain">Mountain</option>
+                <option value="City">City</option>
+                <option value="Speed">Speed</option>
+            </select>
+        </div>
+        
+        <div class="md-3">
+             <div class="form-check">
+                 @Html.CheckBox("IsElectric", new {Class = "form-check-input", id = "IsElectric"})
+                 <label class="form-check-label" for="IsElectric">
+                     Is electric?
+                 </label>
+             </div>`
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+</div>

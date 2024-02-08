@@ -1,0 +1,39 @@
+@model List<RentHistoryViewModel>
+
+@{
+    ViewData["Title"] = "The rent history";
+}
+
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Type</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Is Electric?</th>
+        </tr>
+        </thead>
+            
+        <tbody>
+        @foreach (var @bike in @Model)
+        {
+            <tr>
+                <th scope="row">@bike.Id</th>
+                <td>@bike.Type</td>
+                <td>@bike.Brand</td>
+                <td>
+                    @if (@bike.IsElectric)
+                    {
+                        <span>Yes</span>
+                    }
+                    else
+                    {
+                        <span>No</span>
+                    }
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
