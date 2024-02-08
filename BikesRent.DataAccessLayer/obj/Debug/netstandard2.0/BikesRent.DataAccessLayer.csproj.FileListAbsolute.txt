@@ -1,0 +1,10 @@
+/Users/felix/RiderProjects/BikesRent/BikesRent.DataAccessLayer/obj/Debug/netstandard2.0/BikesRent.DataAccessLayer.csproj.AssemblyReference.cache
+/Users/felix/RiderProjects/BikesRent/BikesRent.DataAccessLayer/obj/Debug/netstandard2.0/BikesRent.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/felix/RiderProjects/BikesRent/BikesRent.DataAccessLayer/obj/Debug/netstandard2.0/BikesRent.DataAccessLayer.AssemblyInfoInputs.cache
+/Users/felix/RiderProjects/BikesRent/BikesRent.DataAccessLayer/obj/Debug/netstandard2.0/BikesRent.DataAccessLayer.AssemblyInfo.cs
+/Users/felix/RiderProjects/BikesRent/BikesRent.DataAccessLayer/obj/Debug/netstandard2.0/BikesRent.DataAccessLayer.csproj.CoreCompileInputs.cache
+/Users/felix/RiderProjects/BikesRent/BikesRent.DataAccessLayer/bin/Debug/netstandard2.0/BikesRent.DataAccessLayer.deps.json
+/Users/felix/RiderProjects/BikesRent/BikesRent.DataAccessLayer/bin/Debug/netstandard2.0/BikesRent.DataAccessLayer.dll
+/Users/felix/RiderProjects/BikesRent/BikesRent.DataAccessLayer/bin/Debug/netstandard2.0/BikesRent.DataAccessLayer.pdb
+/Users/felix/RiderProjects/BikesRent/BikesRent.DataAccessLayer/obj/Debug/netstandard2.0/BikesRent.DataAccessLayer.dll
+/Users/felix/RiderProjects/BikesRent/BikesRent.DataAccessLayer/obj/Debug/netstandard2.0/BikesRent.DataAccessLayer.pdb

@@ -9,21 +9,24 @@
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Type</th>
-            <th scope="col">Brand</th>
-            <th scope="col">Is Electric?</th>
+            <th scope="col">Bike Id</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Start time</th>
+            <th scope="col">Is Active?</th>
+            <th scope="col">End time</th>
         </tr>
         </thead>
             
         <tbody>
-        @foreach (var @bike in @Model)
+        @foreach (var rent in @Model)
         {
             <tr>
-                <th scope="row">@bike.Id</th>
-                <td>@bike.Type</td>
-                <td>@bike.Brand</td>
+                <th scope="row">@rent.Id</th>
+                <td>@rent.Bike.Id</td>
+                <td>@rent.User.Name</td>
+                <td>@rent.StartTime</td>
                 <td>
-                    @if (@bike.IsElectric)
+                    @if (rent.IsActive)
                     {
                         <span>Yes</span>
                     }
@@ -32,6 +35,7 @@
                         <span>No</span>
                     }
                 </td>
+                <td>@rent.EndTime</td>
             </tr>
         }
         </tbody>

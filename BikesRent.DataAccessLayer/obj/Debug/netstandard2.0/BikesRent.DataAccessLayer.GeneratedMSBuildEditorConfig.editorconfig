@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = BikesRent.DataAccessLayer
+build_property.ProjectDir = /Users/felix/RiderProjects/BikesRent/BikesRent.DataAccessLayer/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

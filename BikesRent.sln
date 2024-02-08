@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikesRent.Web", "BikesRent.Web\BikesRent.Web.csproj", "{314828E2-38A8-4115-AAF9-68DA20CF8606}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikesRent.DataAccessLayer", "BikesRent.DataAccessLayer\BikesRent.DataAccessLayer.csproj", "{83C7C22E-F3A8-458C-8457-550121F37796}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{314828E2-38A8-4115-AAF9-68DA20CF8606}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{314828E2-38A8-4115-AAF9-68DA20CF8606}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{314828E2-38A8-4115-AAF9-68DA20CF8606}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{314828E2-38A8-4115-AAF9-68DA20CF8606}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83C7C22E-F3A8-458C-8457-550121F37796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C7C22E-F3A8-458C-8457-550121F37796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C7C22E-F3A8-458C-8457-550121F37796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C7C22E-F3A8-458C-8457-550121F37796}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
