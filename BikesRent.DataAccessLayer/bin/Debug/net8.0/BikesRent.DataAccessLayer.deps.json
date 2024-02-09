@@ -10,10 +10,22 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "8.0.1",
           "Microsoft.EntityFrameworkCore.Design": "8.0.1",
+          "Microsoft.EntityFrameworkCore.Proxies": "8.0.1",
           "Microsoft.EntityFrameworkCore.Sqlite.Core": "8.0.1"
         },
         "runtime": {
           "BikesRent.DataAccessLayer.dll": {}
+        }
+      },
+      "Castle.Core/5.1.1": {
+        "dependencies": {
+          "System.Diagnostics.EventLog": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Castle.Core.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.1.1.0"
+          }
         }
       },
       "Humanizer.Core/2.14.1": {
@@ -302,6 +314,18 @@
           }
         }
       },
+      "Microsoft.EntityFrameworkCore.Proxies/8.0.1": {
+        "dependencies": {
+          "Castle.Core": "5.1.1",
+          "Microsoft.EntityFrameworkCore": "8.0.1"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Proxies.dll": {
+            "assemblyVersion": "8.0.1.0",
+            "fileVersion": "8.0.123.58002"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/8.0.1": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "8.0.1",
@@ -534,6 +558,28 @@
           }
         }
       },
+      "System.Diagnostics.EventLog/6.0.0": {
+        "runtime": {
+          "lib/net6.0/System.Diagnostics.EventLog.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          },
+          "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
       "System.IO.Pipelines/6.0.3": {
         "runtime": {
           "lib/net6.0/System.IO.Pipelines.dll": {
@@ -568,6 +614,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Castle.Core/5.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rpYtIczkzGpf+EkZgDr9CClTdemhsrwA/W5hMoPjLkRFnXzH44zDLoovXeKtmxb1ykXK9aJVODSpiJml8CTw2g==",
+      "path": "castle.core/5.1.1",
+      "hashPath": "castle.core.5.1.1.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",
@@ -652,6 +705,13 @@
       "sha512": "sha512-bu64mscf31BC9Nj4QAktliBnjfZIoc3rIExW7FvxDofkqboE4+j8GwJYjc1KePOwXGrR8yw/ajhr7jZdKI4UyA==",
       "path": "microsoft.entityframeworkcore.design/8.0.1",
       "hashPath": "microsoft.entityframeworkcore.design.8.0.1.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Proxies/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ejwl7XXNaqMen7No1mkuf9b74kdQHY15JTCGURy7EIw12ms7+INkT1aRIYyWln3hSPV1vlSB7Z0sW9+gSDa5Bg==",
+      "path": "microsoft.entityframeworkcore.proxies/8.0.1",
+      "hashPath": "microsoft.entityframeworkcore.proxies.8.0.1.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/8.0.1": {
       "type": "package",
@@ -806,6 +866,13 @@
       "sha512": "sha512-iUR1eHrL8Cwd82neQCJ00MpwNIBs4NZgXzrPqx8NJf/k4+mwBO0XCRmHYJT4OLSwDDqh5nBLJWkz5cROnrGhRA==",
       "path": "system.composition.typedparts/6.0.0",
       "hashPath": "system.composition.typedparts.6.0.0.nupkg.sha512"
+    },
+    "System.Diagnostics.EventLog/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lcyUiXTsETK2ALsZrX+nWuHSIQeazhqPphLfaRxzdGaG93+0kELqpgEHtwWOlQe7+jSFnKwaCAgL4kjeZCQJnw==",
+      "path": "system.diagnostics.eventlog/6.0.0",
+      "hashPath": "system.diagnostics.eventlog.6.0.0.nupkg.sha512"
     },
     "System.IO.Pipelines/6.0.3": {
       "type": "package",

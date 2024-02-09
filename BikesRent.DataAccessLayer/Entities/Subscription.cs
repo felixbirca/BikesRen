@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BikesRent.DataAccessLayer.Entities;
 
-public class Subscription
+public class Subscription : BaseEntity
 {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public string Id { get; set; }

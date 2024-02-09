@@ -1,0 +1,30 @@
+@model BikesRent.BusinessLogicLayer.ViewModels.RentBikeViewModel
+
+@{
+    ViewData["Title"] = "Rent a bike";
+}
+
+@if (@Model.CanRentMore)
+{
+    <div>
+        <form action="Rent" method="post">
+            
+            <div class="mb-3">
+                <select class="form-select" aria-label="Bike" name="bikeId">
+                    @foreach (var @bike in @Model.AvailableBikes)
+                    {
+                        <option value="@bike.Id">@bike.Type - @bike.Brand</option>
+                    }
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+}
+else
+{
+    <div class="alert alert-danger" role="alert">
+        You can't rent any more bikes.
+    </div>
+}

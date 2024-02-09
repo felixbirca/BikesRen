@@ -1,4 +1,4 @@
-namespace BikesRent.Web.Models;
+namespace BikesRent.BusinessLogicLayer.ViewModels;
 
 public class CreateBikeModel
 {

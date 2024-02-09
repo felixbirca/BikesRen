@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BikesRent.DataAccessLayer.Entities;
 
-public class User
+public class User : BaseEntity
 {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public string Id { get; set; }
@@ -19,5 +19,5 @@ public class User
     
     public DateTimeOffset? SubscriptionExpiration { get; set; }
     
-    public ICollection<RentHistory> RentHistories { get; set; }
+    public virtual ICollection<RentHistory> RentHistories { get; set; }
 }

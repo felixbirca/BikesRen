@@ -1,6 +1,6 @@
 using BikesRent.DataAccessLayer.Entities;
 
-namespace BikesRent.Web.Models;
+namespace BikesRent.BusinessLogicLayer.ViewModels;
 
 public class RentHistoryViewModel
 {

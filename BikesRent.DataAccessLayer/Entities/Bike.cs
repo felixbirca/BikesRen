@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BikesRent.DataAccessLayer.Entities
 {
-    public class Bike
+    public class Bike : BaseEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
@@ -14,6 +14,6 @@ namespace BikesRent.DataAccessLayer.Entities
         
         public bool IsElectric { get; set; }
         
-        public ICollection<RentHistory> RentHistories { get; set; }
+        public virtual ICollection<RentHistory> RentHistories { get; set; }
     }
 }

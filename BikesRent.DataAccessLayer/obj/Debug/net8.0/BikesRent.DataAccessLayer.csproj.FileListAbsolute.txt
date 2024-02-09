@@ -12,3 +12,4 @@
 /Users/felix/RiderProjects/BikesRent/BikesRent.DataAccessLayer/obj/Debug/net8.0/ref/BikesRent.DataAccessLayer.dll
 /Users/felix/RiderProjects/BikesRent/BikesRent.DataAccessLayer/bin/Debug/net8.0/BikesRent.DataAccessLayer.runtimeconfig.json
 /Users/felix/RiderProjects/BikesRent/BikesRent.DataAccessLayer/obj/Debug/net8.0/BikesRent.DataAccessLayer.genruntimeconfig.cache
+/Users/felix/RiderProjects/BikesRent/BikesRent.DataAccessLayer/obj/Debug/net8.0/BikesRent.DataAccessLayer.sourcelink.json

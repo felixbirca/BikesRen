@@ -1,35 +1,21 @@
-using BikesRent.DataAccessLayer;
-using BikesRent.DataAccessLayer.Entities;
-using BikesRent.Web.Models;
+using BikesRent.BusinessLogicLayer;
+using BikesRent.BusinessLogicLayer.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace BikesRent.Web.Controllers;
 
 public class BikesController : Controller
 {
-    private readonly BikesDbContext _dbContext;
+    private readonly IBikeService _bikeService;
 
-    public BikesController(BikesDbContext dbContext)
+    public BikesController(IBikeService bikeService)
     {
-        _dbContext = dbContext;
+        _bikeService = bikeService;
     }
 
     public async Task<IActionResult> Index()
     {
-        var bikes = await _dbContext.Bikes.ToListAsync();
-        var bikeViewModels = new List<BikeViewModel>();
-
-        foreach (var bike in bikes) 
-        {
-            bikeViewModels.Add(new BikeViewModel
-            {
-                Id = bike.Id,
-                Brand = bike.Brand,
-                IsElectric = bike.IsElectric,
-                Type = bike.Type
-            });
-        }
+        var bikeViewModels = await _bikeService.GetAllBikes();
         
         return View(bikeViewModels);
     }
@@ -42,16 +28,8 @@ public class BikesController : Controller
     [HttpPost]
     public async Task<IActionResult> Create(CreateBikeModel model)
     {
-        await _dbContext.Bikes.AddAsync(new Bike
-        {
-            Brand = model.Brand,
-            IsElectric = model.IsElectric,
-            Type = model.Type
-        });
-
-        await _dbContext.SaveChangesAsync();
+        await _bikeService.CreateBike(model);
         
         return RedirectToAction("Index");
     }
-    
 }

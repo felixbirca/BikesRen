@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikesRent.Web", "BikesRent.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikesRent.DataAccessLayer", "BikesRent.DataAccessLayer\BikesRent.DataAccessLayer.csproj", "{83C7C22E-F3A8-458C-8457-550121F37796}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikesRent.BusinessLogicLayer", "BikesRent.BusinessLogicLayer\BikesRent.BusinessLogicLayer.csproj", "{58CBC554-C392-4FFD-BE43-0DC8D9F775CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikesRent.API", "BikesRent.API\BikesRent.API.csproj", "{E73C5BAF-01B5-40D5-978C-5C5513946928}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{83C7C22E-F3A8-458C-8457-550121F37796}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83C7C22E-F3A8-458C-8457-550121F37796}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83C7C22E-F3A8-458C-8457-550121F37796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58CBC554-C392-4FFD-BE43-0DC8D9F775CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58CBC554-C392-4FFD-BE43-0DC8D9F775CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58CBC554-C392-4FFD-BE43-0DC8D9F775CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58CBC554-C392-4FFD-BE43-0DC8D9F775CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E73C5BAF-01B5-40D5-978C-5C5513946928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E73C5BAF-01B5-40D5-978C-5C5513946928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E73C5BAF-01B5-40D5-978C-5C5513946928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E73C5BAF-01B5-40D5-978C-5C5513946928}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,21 @@
+@model ICollection<BikesRent.BusinessLogicLayer.ViewModels.UserViewModel>
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<div>
+    <form action="Login" method="post">
+        <div class="mb-3">
+            <select class="form-select" aria-label="User" name="userId">
+                @foreach (var @user in @Model) 
+                { 
+                    <option value="@user.Id">@user.Name</option>
+                }
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+</div>

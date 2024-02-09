@@ -7,7 +7,6 @@ namespace BikesRent.DataAccessLayer
     {
         public BikesDbContext()
         {
-            
         }
         
         public BikesDbContext(DbContextOptions<BikesDbContext> options) : base(options)
