@@ -6,10 +6,10 @@ using BikesRent.DataAccessLayer.Entities;
 
 namespace BikesRent.DataAccessLayer;
 
-public interface IEntityRepository<T> where T: BaseEntity
+public interface IEntityRepository
 {
-    public Task<ICollection<T>> GetAll();
-    public Task<ICollection<T>> Where(Expression<Func<T, bool>> expression);
-    public Task Create(T entity);
+    public Task<ICollection<T>> GetAll<T>() where T : BaseEntity;
+    public Task<ICollection<T>> Where<T>(Expression<Func<T, bool>> expression) where T : BaseEntity;
+    public Task Create<T>(T entity) where T : BaseEntity;
     public Task Update();
 }

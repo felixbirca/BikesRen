@@ -57,15 +57,15 @@ public class MemoryCacheService : ICache
         _cache.Remove(key);
     }
 
-    public void RemoveByPattern(string pattern)
-    {
-        
-    }
-
-    public void Clear()
-    {
-        // Clearing all cache data directly is not supported by IMemoryCache.
-        // You would need to track keys manually if you need to clear the cache.
-    }
+    // public void RemoveByPattern(string pattern)
+    // {
+    //     
+    // }
+    //
+    // public void Clear()
+    // {
+    //     // Clearing all cache data directly is not supported by IMemoryCache.
+    //     // You would need to track keys manually if you need to clear the cache.
+    // }
 }
 

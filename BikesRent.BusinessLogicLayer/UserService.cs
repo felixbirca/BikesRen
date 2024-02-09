@@ -6,15 +6,15 @@ namespace BikesRent.BusinessLogicLayer;
 
 public class UserService : IUserService
 {
-    private readonly IEntityRepository<User> _userRepository;
-    public UserService(IEntityRepository<User> userRepository)
+    private readonly IEntityRepository _entityRepository;
+    public UserService(IEntityRepository entityRepository)
     {
-        _userRepository = userRepository;
+        _entityRepository = entityRepository;
     }
 
     public async Task<ICollection<UserViewModel>> GetAll()
     {
-        return (await _userRepository.GetAll()).
+        return (await _entityRepository.GetAll<User>()).
             Select(x => new UserViewModel
             {
                 Id = x.Id,

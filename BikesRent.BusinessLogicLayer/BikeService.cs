@@ -6,15 +6,13 @@ namespace BikesRent.BusinessLogicLayer;
 
 public class BikeService : IBikeService
 {
-    private readonly IEntityRepository<Bike> _bikeRepository;
-    private readonly IEntityRepository<RentHistory> _rentHistoryRepository;
+
+    private readonly IEntityRepository _entityRepository;
     private readonly ICache _cache;
 
-    public BikeService(IEntityRepository<Bike> bikeRepository, IEntityRepository<RentHistory> rentHistoryRepository,
-        ICache cache)
+    public BikeService(IEntityRepository entityRepository, ICache cache)
     {
-        _bikeRepository = bikeRepository;
-        _rentHistoryRepository = rentHistoryRepository;
+        _entityRepository = entityRepository;
         _cache = cache;
     }
 
@@ -29,7 +27,7 @@ public class BikeService : IBikeService
 
         var bikeViewModels = new List<BikeViewModel>();
 
-        var bikes = await _bikeRepository.GetAll();
+        var bikes = await _entityRepository.GetAll<Bike>();
 
         foreach (var bike in bikes)
         {
@@ -51,7 +49,7 @@ public class BikeService : IBikeService
     {
         _cache.Remove("bikes");
 
-        await _bikeRepository.Create(new Bike
+        await _entityRepository.Create(new Bike
         {
             Brand = bike.Brand,
             Type = bike.Type,
@@ -63,7 +61,7 @@ public class BikeService : IBikeService
     {
         var bikeViewModels = new List<BikeViewModel>();
 
-        var bikes = await _bikeRepository.GetAll();
+        var bikes = await _entityRepository.GetAll<Bike>();
 
         foreach (var bike in bikes)
         {
@@ -76,7 +74,7 @@ public class BikeService : IBikeService
             });
         }
 
-        var busyBikes = (await _rentHistoryRepository.GetAll())
+        var busyBikes = (await _entityRepository.GetAll<RentHistory>())
             .Where(x => x.IsActive)
             .Select(x => x.BikeId);
 
@@ -89,12 +87,12 @@ public class BikeService : IBikeService
     {
         _cache.Remove("bikes");
 
-        var bike = (await _bikeRepository.Where(x => x.Id == model.Id)).FirstOrDefault();
+        var bike = (await _entityRepository.Where<Bike>(x => x.Id == model.Id)).FirstOrDefault();
 
         bike.IsElectric = model.IsElectric;
         bike.Brand = model.Brand;
         bike.Type = model.Type;
 
-        await _bikeRepository.Update();
+        await _entityRepository.Update();
     }
 }

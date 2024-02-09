@@ -25,11 +25,7 @@ public class Program
         builder.Services.AddDbContext<BikesDbContext>(options =>
             options.UseLazyLoadingProxies().UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-        builder.Services.AddScoped<IEntityRepository<BaseEntity>, EntityRepository<BaseEntity>>();
-        builder.Services.AddScoped<IEntityRepository<Subscription>, EntityRepository<Subscription>>();
-        builder.Services.AddScoped<IEntityRepository<Bike>, EntityRepository<Bike>>();
-        builder.Services.AddScoped<IEntityRepository<User>, EntityRepository<User>>();
-        builder.Services.AddScoped<IEntityRepository<RentHistory>, EntityRepository<RentHistory>>();
+        builder.Services.AddScoped<IEntityRepository, EntityRepository>();
 
         builder.Services.AddScoped<ISubscriptionService, SubscriptionService>();
         builder.Services.AddScoped<IBikeService, BikeService>();

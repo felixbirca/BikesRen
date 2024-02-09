@@ -7,33 +7,24 @@ namespace BikesRent.BusinessLogicLayer;
 
 public class SubscriptionService : ISubscriptionService
 {
-    private readonly IEntityRepository<Subscription> _subscriptionRepository;
-    private readonly IEntityRepository<Bike> _bikeRepository;
-    private readonly IEntityRepository<User> _userRepository;
-    private readonly IEntityRepository<RentHistory> _rentHistoryRepository;
+    private readonly IEntityRepository _entityRepository;
 
-    public SubscriptionService(IEntityRepository<Subscription> subscriptionRepository, 
-             IEntityRepository<Bike> bikeRepository,
-             IEntityRepository<User> userRepository,
-             IEntityRepository<RentHistory> rentHistoryRepository)
+    public SubscriptionService(IEntityRepository entityRepository)
     {
-        _subscriptionRepository = subscriptionRepository;
-        _bikeRepository = bikeRepository;
-        _userRepository = userRepository;
-        _rentHistoryRepository = rentHistoryRepository;
+        _entityRepository = entityRepository;
     }
 
     public async Task<bool> CanRentABike(string userId)
     {
-        var user = (await _userRepository.Where(x => x.Id == userId)).FirstOrDefault();
-        var subscription = (await _subscriptionRepository.Where(x => x.Id == user.SubscriptionId)).FirstOrDefault();
+        var user = (await _entityRepository.Where<User>(x => x.Id == userId)).FirstOrDefault();
+        var subscription = (await _entityRepository.Where<Subscription>(x => x.Id == user.SubscriptionId)).FirstOrDefault();
 
         if (user.SubscriptionExpiration < DateTimeOffset.Now)
         {
             return false;
         }
         
-        var activeRents = await _rentHistoryRepository.Where(x => x.UserId == user.Id && x.IsActive);
+        var activeRents = await _entityRepository.Where<RentHistory>(x => x.UserId == user.Id && x.IsActive);
         
         if (activeRents.Count >= subscription.RentLimit)
         {
@@ -45,7 +36,7 @@ public class SubscriptionService : ISubscriptionService
 
     public async Task RentBike(RentBikeModel rentBikeModel)
     {
-        await _rentHistoryRepository.Create(new RentHistory
+        await _entityRepository.Create(new RentHistory
         {
             BikeId = rentBikeModel.BikeId,
             UserId = rentBikeModel.UserId,
@@ -56,19 +47,19 @@ public class SubscriptionService : ISubscriptionService
 
     public async Task EndRent(RentBikeModel rentBikeModel)
     {
-        var activeRent = (await _rentHistoryRepository
-                .Where(x => x.UserId == rentBikeModel.UserId && x.BikeId == rentBikeModel.BikeId && x.IsActive))
+        var activeRent = (await _entityRepository
+                .Where<RentHistory>(x => x.UserId == rentBikeModel.UserId && x.BikeId == rentBikeModel.BikeId && x.IsActive))
                 .FirstOrDefault();
 
         activeRent.IsActive = false;
         activeRent.EndTime = DateTimeOffset.Now;
 
-        await _rentHistoryRepository.Update();
+        await _entityRepository.Update();
     }
 
     public async Task<ICollection<RentHistoryViewModel>> GetAll()
     {
-        var result = await _rentHistoryRepository.GetAll();
+        var result = await _entityRepository.GetAll<RentHistory>();
         var rentHistoryViewModels = new List<RentHistoryViewModel>();
         
         foreach (var rentItem in result)

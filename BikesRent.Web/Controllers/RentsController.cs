@@ -1,9 +1,6 @@
 using BikesRent.BusinessLogicLayer;
 using BikesRent.BusinessLogicLayer.ViewModels;
-using BikesRent.DataAccessLayer;
-using BikesRent.Web.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace BikesRent.Web.Controllers;
 
@@ -30,7 +27,7 @@ public class RentsController : Controller
     public async Task<IActionResult> Rent()
     {
         var userId = HttpContext.Request.Cookies["user_id"];
-        
+
         if (userId == null)
         {
             return View("Login", await _userService.GetAll());
@@ -49,7 +46,7 @@ public class RentsController : Controller
         HttpContext.Response.Cookies.Append("user_id", userId);
         return RedirectToAction("Rent");
     }
-    
+
     [HttpPost]
     public async Task<IActionResult> Rent(RentBikeModel model)
     {
@@ -60,4 +57,3 @@ public class RentsController : Controller
         return RedirectToAction("Index");
     }
 }
-    
