@@ -19,7 +19,20 @@ public class BikesController : Controller
         
         return View(bikeViewModels);
     }
+    
+    [HttpGet("bikes/{id}")]
+    public async Task<IActionResult> Index(string id)
+    {
+        var bike = await _bikeService.GetById(id);
+        
+        if (bike == null)
+        {
+            return NotFound();
+        }
 
+        return View("Bike", bike);
+    }
+    
     public IActionResult Create()
     {
         return View();

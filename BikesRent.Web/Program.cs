@@ -25,7 +25,11 @@ public class Program
         builder.Services.AddScoped<ISubscriptionService, SubscriptionService>();
         builder.Services.AddScoped<IBikeService, BikeService>();
         builder.Services.AddScoped<IUserService, UserService>();
+        
+        builder.Logging.ClearProviders();
+        builder.Logging.AddConsole();
 
+        builder.Services.AddLogging();
         builder.Services.AddMemoryCache();
         builder.Services.AddSingleton<ICache, MemoryCacheService>();
         

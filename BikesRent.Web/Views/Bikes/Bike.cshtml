@@ -1,0 +1,9 @@
+@model BikesRent.BusinessLogicLayer.ViewModels.BikeViewModel
+
+<div>
+    <h3>@Model.Brand @Model.Type bike</h3>
+    @if (@Model.IsElectric)
+    {
+        <span class="badge text-bg-primary">Is Electeric!</span>
+    }
+</div>

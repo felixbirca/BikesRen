@@ -1,7 +1,6 @@
 using System.Collections;
 using BikesRent.BusinessLogicLayer;
 using BikesRent.BusinessLogicLayer.ViewModels;
-using BikesRent.DataAccessLayer.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BikesRent.API.Controllers;

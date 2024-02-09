@@ -8,4 +8,5 @@ public interface IBikeService
     Task CreateBike(CreateBikeModel bike);
     Task<ICollection<BikeViewModel>> GetAvailableBikes();
     Task UpdateBike(UpdateBikeModel model);
+    Task<BikeViewModel> GetById(string id);
 }
